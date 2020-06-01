@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>定位属性-float属性</title>
+        <style>
+            .class01{
+                width: 600px;
+                height: 600px;
+                background-color: black;
+            }
+            .class01 :first-child{
+                width: 200px;
+                height: 200px;
+                background-color: blue;
+            }
+            .class01 :nth-child(2){
+                width: 200px;
+                height: 200px;
+                background-color: lightcyan;
+            }
+            .class01 :nth-child(3){
+                width: 200px;
+                height: 200px;
+                background-color:lightcoral;
+            }
+
+            .class02{
+                width: 600px;
+                height: 600px;
+                background-color: black;
+            }
+            .class02 :first-child{
+                float: left;
+                width: 200px;
+                height: 100px;
+                background-color: blue;
+            }
+            .class02 :nth-child(2){
+                float: left;
+                width: 200px;
+                height: 200px;
+                background-color: lightcyan;
+            }
+            .class02 :nth-child(3){
+                width: 200px;
+                height: 200px;
+                background-color:lightcoral;
+            }
+
+            
+            .class03{
+                width: 600px;
+                height: 600px;
+                background-color: black;
+            }
+            .class03 :first-child{
+                float: right;
+                width: 200px;
+                height: 200px;
+                background-color: blue;
+            }
+            .class03 :nth-child(2){
+                float: right;
+                width: 200px;
+                height: 200px;
+                background-color: lightcyan;
+            }
+            .class03 :nth-child(3){
+                width: 300px;
+                height: 300px;
+                background-color:lightcoral;
+            }
+
+            .class04{
+                width: 600px;
+                height: 600px;
+                background-color: black;
+            }
+            .class04 :first-child{
+                float: right;
+                width: 200px;
+                height: 200px;
+                background-color: blue;
+            }
+            .class04 :nth-child(2){
+                float: right;
+                width: 200px;
+                height: 200px;
+                background-color: lightcyan;
+            }
+            .class04 :nth-child(3){
+                float: right;
+                width: 300px;
+                height: 300px;
+                background-color:lightcoral;
+            }
+
+            a{
+                width: 200px;
+                height: 200px;
+                background-color: royalblue;
+            }
+            span{
+                float: left;
+                width: 200px;
+                height: 200px;
+                background-color: yellow;
+            }
+
+            .class05{
+                /* width: 600px;
+                height: 600px; */
+                clear: both;
+                background-color: black;
+            }
+            .class05 :first-child{
+                /* float: right; */
+                width: 200px;
+                height: 200px;
+                background-color: blue;
+            }
+            .class05 :nth-child(2){
+                /* float: right; */
+                width: 200px;
+                height: 200px;
+                background-color: lightcyan;
+            }
+            .class05 :nth-child(3){
+                /* float: right; */
+                width: 200px;
+                height: 200px;
+                background-color:lightcoral;
+            }
+
+            .class06{
+                /* width: 600px;
+                height: 600px; */
+                /* clear: both; */
+                overflow: hidden;
+                background-color: black;
+            }
+            .class06 :first-child{
+                float: right;
+                width: 200px;
+                height: 200px;
+                background-color: blue;
+            }
+            .class06 :nth-child(2){
+                float: right;
+                width: 200px;
+                height: 200px;
+                background-color: lightcyan;
+            }
+            .class06 :nth-child(3){
+                float: right;
+                width: 200px;
+                height: 200px;
+                background-color:lightcoral;
+            }
+            .class06 :last-child{
+                width: 400px;
+                height: 400px;
+                background-color:yellow;
+            }
+        </style>
+    </head>
+    <body>
+       浮动定位指：<br>
+       1.将元素排除在普通流之外<br>
+       2.元素将不再页面占据空间<br>
+       3.将浮动元素放置在包含框的左边或者右边<br>
+       4.浮动元素依旧在包含框里面<br>
+
+       浮动元素的外边缘不会超过其父元素的内边缘<br>
+       浮动元素不会互相重叠<br>
+       浮动元素不会上下浮动<br>
+       任何元素一旦浮动，display将失效，可设置高宽。不会独占一行<br>
+
+       <p>普通元素</p>
+       <div class="class01">
+           <div></div>
+           <div></div>
+           <div></div>
+       </div>
+
+       <p>float元素:left 浮动元素将不再页面占据空间</p>
+       <div class="class02">
+        <div></div>
+        <div></div>
+        <div></div>
+        </div>
+
+        
+       <p>float元素:right 浮动元素的外边缘不会超过其父元素的内边缘,浮动元素碰到相邻的边框便停止了</p>
+       <div class="class03">
+        <div></div>
+        <div></div>
+        <div></div>
+        </div>
+
+        <p>float元素:right 浮动元素的外边缘不会超过其父元素的内边缘,浮动元素碰到相邻的边框便停止了</p>
+        <div class="class04">
+         <div></div>
+         <div></div>
+         <div></div>
+         </div>
+
+         <a>wwww.baidu.com</a>
+         <span>
+             行内元素本来没有宽高属性,不会独占一行，但是加上float之后有宽高属性了。
+         </span>
+
+         
+        <p>float元素:clear-both :取消其他元素浮动，对当前元素产生的影响</p>
+        <div class="class05">
+         <div></div>
+         <div></div>
+         <div></div>
+         </div>
+
+         <p>float元素:使用overflow：hidden，在不设置父元素高度的情况下,使父元素可以感知子类的高度 </p>
+         <div class="class06">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          </div>
+    </body>
+</html>
