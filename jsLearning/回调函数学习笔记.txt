@@ -1,0 +1,43 @@
+1.什么是回调或者高阶函数？
+回调函数，也被称作高阶函数，就是把一个函数作为参数传入“另一个函数”，然后回调函数在“另一个函数”中调用。
+回调函数本质上是一种模式（对一种问题的确定解决方案），因此使用回调函数我们也称之为回调模式
+
+//注意传入click方法的参数是一个函数，不是一个变量。
+$("#btn_1").click(function() {
+    alert("Btn 1 Clicked");
+});
+
+var friends = ["Mike", "Stacy", "Andy", "Rick"];
+friends.forEach(function (eachName, index){
+    console.log(index + 1 + ". " + eachName); // 1\. Mike, 2\. Stacy, 3\. Andy, 4\. Rick
+});
+和上面一样，注意我们把一个匿名函数作为参数给 forEach 方法的这种方式。
+
+在JavaScript的世界中，所有代码都是单线程执行的，因为读取文件是耗时操作，所以执行到getFileByPath时，
+还没有读取完毕文件内容会输出undefined.
+由于这个“缺陷”，导致JavaScript的所有网络操作，浏览器事件，都必须是异步执行。异步执行可以用回调函数实现.
+上述例子代码不完善，如果读取文件内容失败，也就是出现异常，我们怎么处理？
+ if (err) return errCallBack(err)
+ callback(dataStr)
+
+2.promise
+1.Promise 是一个 构造函数，既然是构造函数， 那么，我们就可以 new Promise() 得到一个 Promise 的实例；
+2.在 Promise 上，有两个函数，分别叫做 resolve（成功之后的回调函数） 和 reject（失败之后的回调函数）
+3.在 Promise 构造函数的 Prototype 属性上，有一个 .then() 方法，也就说，只要是 Promise 构造函数创建的实例，
+  都可以访问到 .then() 方法
+4.Promise 表示一个 异步操作；每当我们 new 一个 Promise 的实例，这个实例，就表示一个具体的异步操作；
+5.既然 Promise 创建的实例，是一个异步操作，那么，这个 异步操作的结果，只能有两种状态：
+    5.1 状态1： 异步执行成功了，需要在内部调用 成功的回调函数 resolve 把结果返回给调用者；
+    5.2 状态2： 异步执行失败了，需要在内部调用 失败的回调函数 reject 把结果返回给调用者；
+    5.3 由于 Promise 的实例，是一个异步操作，所以，内部拿到 操作的结果后，无法使用 return 把操作的结果返回
+        给调用者； 这时候，只能使用回调函数的形式，来把 成功 或 失败的结果，返回给调用者；
+6.我们可以在 new 出来的 Promise 实例上，调用 .then() 方法，【预先】 为 这个 Promise 异步操作，指定 成功
+（resolve） 和 失败（reject） 回调函数
+
+我们简单梳理下这个promise例子的执行过程：
+程序执行
+1.首先加载getFileByPath进内存，
+2.然后getFileByPath('./files/1.txt')调用该方法，执行getFileByPath方法内代码，执行readFile操作，这里是耗时操作
+3.返回promise对象
+4.promise.then传递回调函数
+5.等待readFile执行完毕，执行回调函数

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- lang=en  告诉搜索引擎爬虫，网站关于什么内容的-->
+<html lang="en,ch">
+	<head>
+		<!-- 字典，识别内容的 gb1312:中国字符集  gbk:包含繁体字  utf-8:万国码 -->
+		<meta charset="utf-8" />
+		<!-- seo相关搜索知识	 -->
+		<meta content="" name="description"/>
+		<meta content="" name="keywords"/>
+		<title>html2</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			 ul{
+				list-style: none;
+				margin: 0 20px;
+			}
+			.taobao li{
+				float: left;
+				margin: 0 10px;
+				color: #f40;
+				font-weight: bold;
+				font-size: 14px;
+				line-height: 25px;
+				height: 25px;
+				padding: 0 5px;
+			}
+			li:hover{
+				background: #f40;
+				color:#fff;
+				border-radius: 15px;
+			}
+			img{
+				height: 50px;
+			}
+			input{
+				padding: 10px;
+				border: 1px solid #999;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 空格 在html是文本分隔符 -->
+		<div style="width: 100px;height: 100px;background: red;">
+			测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试
+		</div>
+		<div style="width: 100px;height: 100px;background: red;">
+			ddddddddddddddddddddddddddddddd
+		</div>
+		<!-- &nbsp; html编码 &lt;< &gt;> -->
+		<div id="">
+			空格 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 空格
+		</div>
+		显示&lt;div&gt;
+		br 回车换行 单标签，hr
+		a<br><br/><br>b
+		
+		重点：
+		有序列表：ol li  type="a"排序  start开始排序
+		无序列表：ul li type="disc" sqare discircle cirle
+		<ol type="1" start="10">
+			<li>机长</li>
+			<li>魔兽</li>
+			<li>攀登者</li>
+			<li>泰坦尼克号</li>
+		</ol>
+		<ol type="a" start="116">
+			<li>机长</li>
+			<li>魔兽</li>
+			<li>攀登者</li>
+			<li>泰坦尼克号</li>
+		</ol>
+		<ul type="disc">
+			<li>苹果</li>
+			<li>橘子</li>
+			<li>香蕉</li>
+			<li>葡萄</li>
+		</ul>
+		<ul class="taobao">
+			<li>天猫</li>
+			<li>聚划算</li>
+			<li>天猫超市</li>
+		</ul>
+		<div>
+			网上的url
+			本地的绝对路径C:\Users\BinYang\Desktop\banner-8.png
+			本地的相对路径banner-8.png
+			title图片提示符
+			<img src="./img/banner-8.png" title="this is image"/>
+			<img src="C:\Users\BinYang\Desktop\banner-8.png" alt="绝对地址" />
+			
+		</div>
+		<div>
+			a标签 anchor ---1锚  2超级链接 3打电话 4发邮件 5协议限定符
+			<a href="tel:15513548206">打电话</a>
+			<a href="mailto:1006684039@qq.com">email</a>
+			<a href="javascript:while(1){alert('ceshi')}">点我试试</a>
+			<a href="https://www.baidu.com" style="width: 100px;height: 100px;color: #f40; ">www.baidu.com</a> hyperText reference
+			<a href="https://www.baidu.com" style="width: 100px;height: 100px;background-color: black; display: block;" target="_blank"></a>
+			
+			<div id="id1" style="width: 100px;height: 100px;background-color: aqua;">demo1</div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br><br>
+			<br>
+			<br>
+			<br><br>
+			<br>
+			<br>
+			<br><br>
+			<br>
+			<br>
+			<br><br>
+			<br>
+			<br>
+			<br><br>
+			<br>
+			<br>
+			<br><br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<div id="id2" style="width: 100px;height: 100px;background-color: red;">demo2</div>
+			<a style="display:block;position:fixed;bottom:100px;right:100px;background-color: #fee; border:1px solid black;height:50px;width:150px" href="#id1">find demo1</a>
+			<a style="display:block;position:fixed;bottom:150px;right:100px;border:1px solid black;height:50px;width:150px" href="#id2">find demo2</a>
+		</div>
+		<div>
+			<div>form表单</div>
+			onblur:失去焦点
+			http://127.0.0.1:8848/html/lesson2-html.html?username=dfasd&password=fasdfa#id2
+			<form method="get" action="http://www.baidu.com/">
+			<!-- <form method="get" action=""> -->
+				<p>
+					username:<input type="text" name="username" placeholder="请输入用户名"/>
+					username:<input type="text" name="username1" style="color: #eee;" value="请输入用户名"
+					onfocus="if(this.value=='请输入用户名'){this.value='';this.style.color:'#424242'}"
+					onblur="if(this.value==''){this.value='请输入用户名';this.style.color:'#eee'}"
+					/>
+				</p>
+				<p>
+					password:<input type="password" name="password" placeholder="请输入密码"/>
+				</p>
+				<p>
+					1.a<input type="radio" name="ceshi" value="a" />
+					2.b<input type="radio" name="ceshi" value="b" />
+					3.c<input type="radio" name="ceshi" value="c" />
+				</p>
+				<p>
+					<input type="submit" />
+				</p>
+			</form>
+		</div>
+		
+	</body>
+</html>

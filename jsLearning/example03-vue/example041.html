@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="utf-8">
+            <title>v-text & v-html 案例</title>
+            <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <!-- 生产环境版本，优化了尺寸和速度 -->
+            <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script>              -->
+            <!--当创建一个 Vue 实例时，你可以传入一个选项对象。这篇教程主要描述的就是如何使用这些选项来创建你想要的行为
+              一个 Vue 应用由一个通过 new Vue 创建的根 Vue 实例，以及可选的嵌套的、可复用的组件树组成-->
+    </head>
+    <body>  
+        <h1>v-text & v-html 案例</h1>
+        <hr>
+        <div id="app">
+            <span>{{ message }}</span>=<span v-text="message"></span><br/>
+            <span v-html="msgHtml"></span>
+        </div>
+     
+        <script type="text/javascript">
+            var app=new Vue({
+                el:'#app',
+                data:{
+                    message:'hello Vue!',
+                    msgHtml:'<h2>hello Vue!</h2>'
+                }
+            })
+        </script>
+    </body>
+</html>

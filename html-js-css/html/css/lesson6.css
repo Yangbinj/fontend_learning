@@ -1,0 +1,27 @@
+
+section div ul li a em{
+	background-color: red;
+	/* background: red; */
+}
+
+/* 并列选择器://无空格 */
+div.demo{ 
+	background: red;
+	
+}
+/* 权重相加,谁大显示谁的样式 */
+div.wrapper>div[class="content"]>em[id="only"]{
+	background: #FFFF00;
+}
+/* 10 10 10 */
+.wrapper>.content>.box{
+	background: black;
+}
+/* 10 1 */
+.content em{
+	background: blue;
+}
+/* 分组选择器
+em,strong,span{
+	background-color:red;
+} */

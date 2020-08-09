@@ -1,0 +1,30 @@
+/* div{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background: black;
+} */
+#only{
+	background: red;
+}
+.demo{
+	background: green;
+}
+div{
+	background: yellow;
+}
+.exter {
+	border-radius: 20%;
+	background: #999999;
+}
+.second{
+	font-weight: 400px;//bold
+	font-size: 20px;
+}
+/* 属性选择器 */
+[id]{
+	background: #eee;
+}
+[id="only1"]{
+	background: #eee;
+}

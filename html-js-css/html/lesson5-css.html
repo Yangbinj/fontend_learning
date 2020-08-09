@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en,cn">
+	<head>
+		<meta charset="utf-8">
+		<title>css引入css复杂选择器，权重计算问题，css基础属性</title>
+		<link rel="stylesheet" type="text/css" href="css/lesson5.css" />
+		<style>
+		
+		</style>
+	</head>
+	<body>
+		cascading style sheet :层叠样式表
+		<div>
+			<span>123</span>
+		</div>
+		<span>
+			456
+		</span>
+		
+		<div>
+			<strong>
+				<em>234343</em>
+			</strong>
+		</div>
+		<em>33333</em>
+		
+		<div id="test">
+			<em> first</em>
+			<strong>
+				<em>234343</em>
+			</strong>
+		</div>
+		<em>33333</em>
+		
+		<div id="test1">
+			<em> first</em>
+			<strong>
+				<em>234343</em>
+			</strong>
+		</div>
+		<em>33333</em>
+		
+		
+		
+		<section>
+			<div>
+				<p>
+					<a>
+						<span></span>
+					</a>
+				</p>
+				<ul>
+					<li>
+						<a href="">
+							<span>
+								1
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<a>
+				<p>
+					<em></em>
+				</p>
+				<div>
+					
+				</div>
+			</a>
+		</section>
+	</body>
+</html>

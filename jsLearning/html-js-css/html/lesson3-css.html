@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en,cn">
+	<head>
+		<meta charset="utf-8">
+		<title>css引入css基础选择器选择器权重</title>
+	</head>
+	<body>
+		浏览器主要由 shell和内核
+		浏览器主要由用户界面、浏览器引擎、网络、javaScript引擎，渲染引擎，UI后端，javaScript解释器，持久化数据存储
+		用户界面：可见的输入框，菜单栏等功能选项
+		浏览器引擎：可以在用户界面和渲染引擎之间传送指令或在客户端本地缓存中读写数据等、通讯的核心部分。
+		渲染引擎：解析dom文档和css规范并将内容排版到浏览器中显示样式的界面。成为排版引擎，或称之为内核。
+		网络功能：开启网络线程发生请求或下载资源文件的模块。
+		UI后端用于绘制基本的浏览器窗口内控件
+		javaScript解释器：浏览器解释和执行javaScript脚本的部分。v8引擎
+		浏览器数据持久化存储则涉及cookie\localStorage等一些客户端存储技术，可以通过浏览器引擎提供的api调用。
+		
+		用户界面
+		浏览器引擎 ==》数据持久化存储
+		渲染引擎
+		网络 javaScript引擎 UI后端
+		
+		css规则的权重计算
+		!important > 内联样式规则 > id选择器 > 类选择器 > 元素选择器
+		
+		渲染引擎的工作流程:
+		解析html构建dom树 ==> 构建渲染树（节点和样式结合） ==> 渲染树布局阶段（位置大小） ==> 绘制渲染树（显示样式） 
+		
+		浏览器数据持久化存储技术
+		浏览器缓存是浏览器端用于在本地保存数据并进行快速读取以避免重复资源请求的传输机制。
+		分为九种：
+		http文件缓存：基于http协议的浏览器端文件级缓存机制。(304,200)
+		localStorage:一种本地缓存方案，浏览器端保存体积较大的数据，在不同的浏览器端有长度限制且各不相同。单域名下的localStorage大小。
+		sessionStorage:和localStorage类似，sessionStorage在浏览器关闭时会自动清空，生命周期存在于标签页或窗口，用于本地存储一个会话（session）中的数据，这些数据会随着窗口或者标签页的关闭而被清空。。
+		cookie:网站为了辨认用户身份或session跟踪而存储在用户浏览器端的数据。一般会通过HTTP请求发送到服务端。一般由，值，域，键，过期时间，和大小组成。
+		浏览器cookie的最大长度和单个域名支持的cookie个数由浏览器的不同来决定。
+		 分为sessioncookie和持久型cookie.
+		 sessioncookie一般不设置过期时间，表示该cookie的生命周期为浏览器会话期间，只要关闭浏览器窗口，cookie就会消失。保存在内存里
+		 持久型cookie一般设置过期时间,会保存在硬盘里,关闭打开浏览器不会消失,出发到了过期时间.把cookie设置成httponly,不能被js访问,只能
+		 通过HTTP请求头发到服务器.
+		webSQl:browser用于存储大量数据的缓存机制.
+		indexDB:是一个可在客户端存储大量结构化数据并且能在数据上使用索引进行检索的一套api.
+		application cache:一种允许浏览器通过manifest配置文件在本地有选择性地存储js,css,图片等静态资源的文件级存储机制。
+		cacheStorage:在window下的全局内置对象caches;
+		flash:读写浏览器端本地目录的功能；
+		
+	   fiddler
+	   npm install -g node-inspetor
+	   node-debug app.js
+	   
+		DOCTYPE:定义兼容HTML的历史版本和最新版本，不支持的使用兼容模式来进行解析。
+	fireFox  gecko
+	chrome   webkit/blink
+	Safari   webkit
+	Opera    presto
+	IE  trident
+	
+	
+	</body>
+</html>

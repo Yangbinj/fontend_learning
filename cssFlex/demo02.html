@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>样式优先级、内联、外部样式</title>
+		<style type="text/css">
+			/* 
+				 ID: #来表示,优先级  ID > Class > Label
+				 ID标签在整个页面中只能使用一次, 主要用来做全局定位
+			*/
+			div {
+				color: red;
+			}
+
+			.mycls {
+				color: green;
+			}
+
+			#mycls {
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="mycls" id="mycls">我是P段落</p>
+		<div class="mycls" id="mycls">我是DIV标签</div>
+		<script type="text/javascript">
+			// 默认只能选中符合条件的第一个
+			var html = document.getElementById("mycls").innerHTML;
+			alert(html);
+		</script>
+	</body>
+</html>

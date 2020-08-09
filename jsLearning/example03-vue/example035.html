@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="utf-8">
+            <title>vue 缩写</title>
+            <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <!-- 生产环境版本，优化了尺寸和速度 -->
+            <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script>              -->
+            <!--当创建一个 Vue 实例时，你可以传入一个选项对象。这篇教程主要描述的就是如何使用这些选项来创建你想要的行为
+              一个 Vue 应用由一个通过 new Vue 创建的根 Vue 实例，以及可选的嵌套的、可复用的组件树组成-->
+    </head>
+    <body>  
+          <div id="app-7">
+            <span>1.总结</span>
+              <pre>
+                  v- 前缀作为一种视觉提示，用来识别模板中 Vue 特定的特性。
+                  当你在使用 Vue.js 为现有标签添加动态行为 (dynamic behavior) 时，
+                  v- 前缀很有帮助，然而，对于一些频繁用到的指令来说，就会感到使用繁琐。
+                  同时，在构建由 Vue 管理所有模板的单页面应用程序 (SPA - single page application) 时，
+                  v- 前缀也变得没那么重要了。因此，Vue 为 v-bind 和 v-on 这两个最常用的指令，提供了特定简写：
+              </pre>
+              <span>2.v-bind 缩写<span>
+              <pre>
+                  <!-- 完整语法 -->
+                  <a v-bind:href="url">...</a>
+
+                  <!-- 缩写 -->
+                  <a :href="url">...</a>
+             </pre>
+              <span>3.v-on 缩写</span>
+              <pre>
+                  !-- 完整语法 -->
+                  <a v-on:click="doSomething">...</a>
+                  
+                  <!-- 缩写 -->
+                  <a @click="doSomething">...</a>
+              </pre>
+              <span>4.后言</span>
+              <pre>
+                  它们看起来可能与普通的 HTML 略有不同，但 : 与 @ 对于特性名来说都是合法字符，
+                  在所有支持 Vue 的浏览器都能被正确地解析。而且，它们不会出现在最终渲染的标记中。
+                  缩写语法是完全可选的，但随着你更深入地了解它们的作用，你会庆幸拥有它们。
+              </pre>
+            </div>
+        <script>
+        </script> 
+    </body>
+</html>

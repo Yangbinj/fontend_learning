@@ -1,0 +1,75 @@
+1.vue.js使用方法
+http://www.cnblogs.com/keepfool/p/5619070.html
+2.windows下创建vue项目
+https://www.jianshu.com/p/be837ce202db
+3.vue项目结构说明
+https://www.runoob.com/vue2/vue-directory-structure.html
+4.vue学习教程
+http://www.runoob.com/vue2/vue-directory-structure.html
+
+5.vue git地址
+http://gitlab.zj.chinamobile.com/vortex-templates/mobile
+http://vortex.zj.chinamobile.com/components/#/tabbar
+
+6.vue 学习笔记
+https://www.jianshu.com/writer#/notebooks/35595987/notes/43996134
+https://www.jianshu.com/p/9d9fc08e72b1
+
+18845414326
+123456zxc
+svnserve -d -r /root/svnroot
+http://20.26.17.81:8024/sup-rs/btMyStall
+http://20.26.17.81:8024/sup-rs/btMyStall
+
+node.js使用方法:
+那么node-global :npm全局安装位置，node-cache：npm 缓存路径 又是怎么与npm发生关系呢？
+npm config set prefix "D:\node\node-v8.11.2-win-x64\node-global"
+npm config set cache "D:\node\node-v8.11.2-win-x64\node-cache"
+npm install webpack -g
+
+新版本会发生的问题
+*1.发现无法解析css问题    -           - npm install postcss-loader
+*2.nodejs/webpack项目提示Invalid Host header
+新版的webpack-dev-server出于安全考虑，默认检查hostname，如果hostname不是配置内的，将中断访问。
+修改webpack.config.js中的devServer选项
+disableHostCheck: true
+
+取消严格模式:https://blog.csdn.net/shangyadongze/article/details/80565068
+http://20.26.17.81:8024/sup-rs/btMyStall
+7.vue+less整合
+https://www.jianshu.com/p/1f600bcf0b5d
+npm install less less-loader --save-dev
+下载好之后就可以.vue文件中使用lang="less"和@import
+第一步：
+安装less依赖，npm install less less-loader --save
+第二步：
+修改webpack.config.js文件，配置loader加载依赖，让其支持外部的less,在原来的代码上添加
+{
+test: /\.less$/,
+loader: "style-loader!css-loader!less-loader",
+}
+
+8.vue2.0 如何自定义组件（vue组件的封装）
+https://www.cnblogs.com/pengfei-nie/p/9134367.html
+
+9.纯vue以及vue+laravel父组件往子组件传递图片路径
+https://blog.csdn.net/shangyanaf/article/details/79533203
+
+10.mint-ui
+mint-ui快速使用
+https://www.jianshu.com/p/972997f982e1
+
+11.span标签里的内容过长如何设置自动换行 
+https://gavinhsueh.iteye.com/blog/2394780
+
+12. VueJS中学习使用Vuex详解 
+https://segmentfault.com/a/1190000015782272
+
+13. 优化js脚本设计，防止浏览器假死
+https://www.cnblogs.com/dinglinyong/p/7155102.html
+
+14.浅谈HTML5单页面架构（二）——backbone + requirejs + zepto + underscore 
+ https://www.cnblogs.com/kenkofox/p/4648472.html
+ 
+15.RequireJS与Backbone简单整合
+https://www.cnblogs.com/yexiaochai/p/3221081.html

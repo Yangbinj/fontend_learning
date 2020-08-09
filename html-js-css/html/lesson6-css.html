@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en,cn">
+	<head>
+		<meta charset="utf-8">
+		<title>css引入css复杂选择器，权重计算问题，css基础属性</title>
+		<link rel="stylesheet" type="text/css" href="css/lesson6.css" />
+		<style>
+		
+		</style>
+	</head>
+	<body>
+		cascading style sheet :层叠样式表
+		浏览器父子选择器是自右向左找对应的元素，这样节省很多效率。
+		<section>
+			<div>
+				<p>
+					<a>
+						<span>12dfasd</span>
+					</a>
+				</p>
+				<ul>
+					<li>
+						<a href="">
+							<span>
+								<em>1dfasd</em>
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<a>
+				<p>
+					<em></em>
+				</p>
+				<div>
+					
+				</div>
+			</a>
+		</section>
+		
+		<div>
+			1
+		</div>
+		<div class="demo">
+			2
+		</div>
+		<p  class="demo">
+			3
+		</p>
+		
+		<div class="wrapper">
+			<div class="content">
+				<em class="box" id="only">
+					1
+				</em>
+			</div>
+		</div>
+		
+	<!-- 	<em>1</em>
+		<strong>2</strong>
+		<span>3</span>
+		em{
+			background-color:red;
+		}
+		strong{
+			background-color:red;			
+		}
+		span{
+			background-color:red;
+		}
+		分组选择器
+		em,strong,span{
+			background-color:red;
+		} -->
+		<!-- 
+		.demo1{
+			background:blue;
+		}
+		.demo2{
+			background:red;
+		}
+		.demo1,
+		.demo2{
+			width:100px;
+			height:100px;
+		} -->
+	</body>
+</html>

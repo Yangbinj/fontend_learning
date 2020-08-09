@@ -1,0 +1,51 @@
+/* 
+方法一：先写html，再逐个写css
+.box1{
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
+.box2{
+	width: 200px;
+	height: 200px;
+	background-color: green;
+}
+.box3{
+	width: 300px;
+	height: 300px;
+	background-color: grey;
+}
+.box4{
+	width: 100px;
+	height: 100px;
+	background-color: greenyellow;
+}
+.box5{
+	width: 200px;
+	height: 200px;
+	background-color: red;
+} */
+
+ /* 方法二：先写css各个功能（组件），再写html,组合样式 --> */
+.red{
+	background-color: red;
+}
+	
+.green{
+	background-color: green;
+}
+.gray{
+	background-color: gray;
+}
+.size1{
+	width: 100px;
+	height: 100px;
+}
+.size2{
+	width: 200px;
+	height: 200px;
+}
+.size3{
+	width: 300px;
+	height: 300px;
+}

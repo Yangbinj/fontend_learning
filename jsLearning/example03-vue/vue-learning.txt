@@ -1,0 +1,207 @@
+vue核心概念：
+   數據驅動，虛擬dom,組件，指令，不直接操作dom
+   組件：通信
+   狀態管理：vuex
+   所有資源加載完成之後，再執行下面方法
+   window.onload=function(){
+       new Vue({
+
+       })
+   }
+   v-on:click="add(name)"
+   methods:{
+       add:function(name){
+           if(name)
+             this.lists.unshift(name)// add first element on list
+       },
+       del:function(index){
+           this.lists.splice(index,1);// delete index element on list
+       }
+   }
+   過濾器：
+   狀態轉換：
+   filters:{
+       stateFilter:function(type){
+           switch(type){
+               case '0':
+                  return "no sell";
+               case '1':
+                  return "have selled";
+               default:
+                  return "dont know";
+           }
+       }
+   }
+   {state | stateFilter}
+
+算法和數據結構：
+  array數組：
+v-for:
+@click = v-on:click="clickMethod"
+@dbclick：雙擊
+v-on:mouseover ="mouseover"
+v-on:mouseout  ="mouseout"
+
+隱藏顯示内容：
+v-show:flag
+使用if-else: 
+v-if="age==18"
+v-else-if="20==age"
+v-else not
+
+
+更改樣式：.abc #abc 
+          jquery dom addClass removeClass
+          vue v-bind 綁定多個樣式
+          v-bind:src="url"  == :src="url"
+          v-bind:src="flag ? url : url2" 
+          v-bind:alt="title" == :alt="title"
+          單一引用
+          :class="a1"
+          後面的覆蓋前面的
+          :class="[a1,a2]"
+          通過Boolean去判斷class
+          :class="{'a3':flag}"         
+          :style="{color:'flag'}"          
+          :style="[a1,a2]"
+
+          三目運算
+          :class="flag?a1:a2"
+          :style="flag?a4:a3"
+        
+閃爍：
+ 避免閃爍：避免使用{{}}
+ 1.必須要樣式
+ [v-cloak]:{
+     display:none;
+ }
+ <div v-cloak>
+ 2.v-text
+ 3.v-html
+
+mvc 設計模式
+model
+view
+controller
+request -> controller -> method -> 業務處理 -> 封裝數據 -> model -> 跳轉 -> view 
+
+mvvm
+model----viewmodel----view  :雙向數據綁定
+
+v-model
+:disabled = "true" or "age == 20"
+
+checkbox v-model="arr" value="0"
+radio  v-model="radio" name="radio" value
+<select v-model="selected">
+    <option v-for="(v,i) in items" v-bind:value="v.value">{{v.text}}</option>
+</select>
+
+event:
+  阻止默認行爲：
+    A href="#" click="" 點擊后會觸發click, 默認行爲：href ==> e.preventDefault ===>@click.prevent
+  阻止事件傳播
+      ie:由内到外  firefox:由外到内
+      div （bind） > div（bind） > div （bind）> body（bind） > html ===> e.stopPropagation
+      @click.stop
+  只執行一次(addEvent removeEvent)：
+      @click.once
+
+過濾器：
+    data => 過濾管道 => 過濾管道 => 返回結果
+    後端數據：
+        sex：0，1  0：man 1:women
+    指令方式：
+       全局指令
+        Vue.filter("addZero",function(num){
+            return num<10?"0"+num:num;
+        })
+        <div>{{1 | addZero}}</div>
+
+      局部指令
+       new Vue({
+           el:"#root",
+           data:{
+               curTime:new Date.now();
+           },
+           filters:{
+               // 數字保留幾位小數
+               number:function(num,n){  // 可以有默認值 n =2
+                   return num.toFixed(n);
+               },
+               //format timestamp
+               date(data){
+                   let d = new Date(data*1000);
+                   return d.getFullYear()+d.getMonth()+1+d.getDate();
+               }
+           }
+       })
+       <div>{{3.1415926 | number(2)}}</div>
+
+       //鍵盤事件  回車鍵 code是 13
+       @keydown.13 = "enter()" == @keydown.enter ="enter($event)"
+       @keydown.a = ""
+       @keydown.esc = ""
+       @keydown.left = ""
+
+       組合鍵
+       alt+a
+       @keydown.alt.65
+       @keydown.alt.a// 不可以
+
+       compoment組件：
+       復用，簡潔
+
+       方式一
+       //全局組件
+        var myconpement = Vue.extend({
+            template:'<h1>hello compoment </h1>' // only contail one root element
+        })
+        //命名規範 建議 連接符 -
+        Vue.compoment("hello",myconpement); // 名字只能小寫
+        <hello></hello>
+       方式二
+       Vue.compoment("my-world",{
+        template:"<h1>hello</h1>"
+       })
+       new Vue({
+           el:"",
+           compoments:{
+               "my-address"：{
+                  template:"<h1>hello</h1>"
+               },
+               "my-address2":{
+                   template:"#myAddtemplate",
+                   data:function(){
+                       return{
+                           title:"title"
+                       }
+                   }
+               }
+           }
+       })
+       <template id="myAddtemplate">
+        <div>
+            <p>{{title}}</p>
+        </div>
+       </template>
+
+嵌套關係：
+ 組件高級用法：
+ <table>
+    <my-tr>
+    </my-tr>
+    <tr is="my-tr"></tr>
+ </table>
+插槽 == 設計模式 模板模式
+ <slot name="s1">
+
+動態組件：
+flag="my-address"
+is: data裏面的變量
+<compoment is="flag"></compoment>
+
+狀態：
+<keep-active>:緩存非活動組件
+
+vue多級聯動

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+	<script src="../vue.min.js"></script>
+</head>
+<body>
+	<div id="vue_det">
+		<h1>site : {{site}}</h1>
+		<h1>url : {{url}}</h1>
+		<h1>{{details()}}</h1>
+	</div>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#vue_det',
+			data: {
+				site: "vue demo1",
+				url: "https://yangbinj.github.io/MyGirl/",
+				alexa: "10000"
+			},
+			methods: {
+				details: function() {
+					return  this.site + " 这是vue对象返回的值";
+				}
+			}
+		})
+	</script>
+</body>
+</html>

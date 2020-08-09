@@ -1,0 +1,14 @@
+1.
+         this.$router.push({
+          // path: 'NoticeDetail',
+          // query: { id:3,mark:2 }
+          name:"NoticeDetail",
+          params:{yangbin:'楊斌'}
+
+        })
+      },
+2.  // 取到路由带过来的参数
+      // const routerParams = this.$route.query.id
+      const routerParams = this.$route.params.yangbin;
+      // 将数据放在当前组件的数据内
+      console.log(routerParams);

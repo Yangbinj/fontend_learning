@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>CSS运算符与选择器</title>
+		<!-- 所有的html标签，本质都是盒子,不同是因为默认的CSS样式不同  -->
+		<style type="text/css">
+			/*
+			     空格: 后代运算符 (包括子元素与后代元素
+				 > : 子运算符
+				 + : 直接后置运算符
+				 ~ : 后置运算符
+				 , : 并集选择器
+				 交集选择器：样式直接写在一起
+				 []: 属性选择器
+			*/
+			#mydiv > span{
+				color: red;
+			}		
+			#mydiv ~ span{
+				color: green;
+			}
+			/*
+			div,p,span,h1{
+				color: #0000FF;
+			}*/
+			span.abc{
+				color: #0000FF;
+			}
+			a[href="http://www.hao123.com"]{
+				color: #f00;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>
+				<span class="abc">我是DIV里面P里面的的Span</span>
+			</p>
+			<span>我是DIV里面的Span</span>
+		</div>
+		<h1>我是标题</h1>
+		<span>我是DIV后面的的Span</span>
+		<hr />
+		<div id="mydiv">
+			<p>
+				<span>我是DIV里面P里面的的Span</span>
+			</p>
+			<span>我是DIV里面的Span</span>
+		</div>
+		<h1>我是标题</h1>
+		<span>我是DIV后面的的Span</span>
+		<a href="http://www.hao123.com">我是超链接</a>
+		<a href="http://www.163.com">我是超链接</a>
+		<a>我是超链接</a>
+	</body>
+</html>

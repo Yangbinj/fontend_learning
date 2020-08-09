@@ -1,0 +1,19 @@
+span{
+	background:red;
+}
+/* 父子选择器 派生选择器 */
+div span{
+	background: blue;
+}
+strong em{
+	background: yellow;
+}
+#test em{
+	background: green;
+}
+
+/* 直接子元素选择器 */
+#test1>em{
+	background: green;
+	
+}
