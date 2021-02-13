@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>样式优先级、内联、外部样式</title>
+		<link href="css/public.css" rel="stylesheet" />
+		<style type="text/css">
+			/* CSS三种写法：内联样式 > .mycls(内部样式) > 外部样式 (后两个优先级本质是加载顺序)*/
+			.mycls{
+				color: blue;
+				border: solid;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mycls">我是DIV标签</div>
+		<p>我是P标签</p>
+		<div class="mycls">我是DIV标签</div>
+		<p>我是P标签</p>
+		<div class="mycls" style="color: red;">我是DIV标签</div>
+		<span style="padding: 30px;">sdfdf</span>
+	</body>
+</html>

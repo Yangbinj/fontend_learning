@@ -1,0 +1,55 @@
+calc()
+注意：+ - * /
+calc(100px - 20px)
+
+
+content-box：向外兼容
+border-box：向内兼容
+
+
+
+父级：
+  display:flex;
+  添加浏览器前缀：-webkit               postCss插件
+
+
+  如果用来弹性布局，子元素，不需要浮动float;
+
+  父级身上其他属性：
+    justify-content:子元素水平排列方式
+    居中center 
+    flex-start:居左 
+    flex-end:居右 
+    space-between:两端对齐
+    space-arround：子元素间隔分部。
+
+    align-items:子元素的垂直排列
+    center:垂直居中
+    flex-start:上面
+    flex-end:底部
+
+    flex-direction:
+    row：行向排列
+    row-reverse:横向翻滚排列
+    column:纵向排列
+    column-reverse:纵向翻滚排列
+
+    flex-wrap:如何包裹子元素,子元素是否在一行显示
+    no-wrap:不换行
+    wrap:：换行
+
+    align-content:多行的时候，垂直排列
+    strech:拉伸，默认
+    center:居中
+    flex-end:下
+    flex-start:上
+
+    flex-flow:<flex-direction> <flex-wrap>
+
+子级身上的属性：
+    flex:1  平分  系数 分成1*2，占1
+    子元素在划分父元素时，先抛出固定元素
+
+    flex-grow:1;  定义子元素放大比例
+    align-self:flex-start  覆盖父级排列 align-items垂直排列
+    order:规定子元素的顺序。数值越小，越靠前

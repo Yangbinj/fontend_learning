@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- 规定 HTML 文档的字符编码 -->
+    <meta charset="utf-8" />
+
+    <title>css引入html的几种方式</title>
+
+    <link rel="stylesheet" href="01css.css" />
+    <style>
+        div {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>let me show how to import css</h1>
+    <div>
+        It is my show time.
+        <div>this is blue（外部css生效）</div>
+    </div>
+
+    <div>It is my show time(head 中的style生效)</div>
+
+    <div style="color: brown;background-color: white;">It is my inner style(元素上的style生效)</div>
+
+</body>
+
+</html>

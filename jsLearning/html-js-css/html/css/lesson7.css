@@ -1,0 +1,65 @@
+div{
+	/* //默认16px 字体的高 */
+	font-size: 50px;
+	/* //字体包，默认 normal : lighter,normal,bold,bolder  ----- 100 ,200,300 ---- 900*/
+	 font-weight:bold ; 
+	 /* 斜体            normal*/
+	 font-style: italic;
+	 /* 字体  cursive */
+	 font-family: arial;
+	 
+	 /* color: blue;  英文单词字体颜色写法 */
+	 /* color: #ff4400;  字体颜色写法 */
+	 /* color: rgb(0-255,0-255,0-255); 颜色函数 字体颜色写法 */
+	 
+	/* r      g      b
+	00-ff  00-ff  00-ff */
+	
+	/* border:border-width border-style border-color */
+	/* border: 1px solid black; */
+	border-width: 1px;;
+	/* 边框样式 dotted */
+	border-style: dotted;
+	border-color: #0000FF;
+	
+	border-left-color: #000000;
+	border-right-color: #008000;
+	/* transparent:透明色 */
+	
+	/* 画三角
+		width:0;
+		height:0;
+		border-left-color:transparent;
+		border-right-color:transparent;
+		border-top-color:transparent;
+		border:100px solid black;
+	 */
+	
+}
+span{
+	color: rgb(0,0,238);
+	text-decoration: underline;
+	/* cursor: help; */
+	cursor: *-resize;
+}
+/* 伪类选择器 */
+a:hover{
+	background: orange;
+	text-decoration: none;
+}
+
+s/* pan{
+	display: inline;
+}
+div{
+	display: block;
+}
+img{
+	display: inline-block;
+} */
+img{
+	width: 100px;
+	/* 线上如何处理 */
+	margin:-4px;
+}
+	

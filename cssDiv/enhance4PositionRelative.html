@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>position定位-relative-相对定位</title>
+        <style>
+            div{
+                width: 200px;
+                height: 200px;
+            }
+            #box1{
+                background-color: red;
+            }
+            #box2{
+                background-color: green;
+                position: relative;
+                left: 100px;
+                top: 100px;
+            }
+            #box3{
+                background-color: blueviolet;
+            }
+        </style>
+    </head>
+    <body>
+        <p>position属性指定一个元素的定位方法的类型</p>
+        <p>absolute：绝对定位</p>
+        <p>relative：相对定位</p>
+        <p>fixed：固定定位，相对于浏览器定位</p>
+
+        <div id="box1"></div>
+        <div id="box2">相对定位，原来的物理位置仍然被定位</div>
+        <div id="box3"></div>
+    </body>
+</html>

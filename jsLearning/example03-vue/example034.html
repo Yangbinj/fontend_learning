@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="utf-8">
+            <title>vue 指令</title>
+            <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <!-- 生产环境版本，优化了尺寸和速度 -->
+            <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script>              -->
+            <!--当创建一个 Vue 实例时，你可以传入一个选项对象。这篇教程主要描述的就是如何使用这些选项来创建你想要的行为
+              一个 Vue 应用由一个通过 new Vue 创建的根 Vue 实例，以及可选的嵌套的、可复用的组件树组成-->
+    </head>
+    <body>  
+          <div id="app-7">
+            <span>1.总结</span>
+              <pre>
+                  指令 (Directives) 是带有 v- 前缀的特殊特性。指令特性的值预期是单个 JavaScript 表达式 (v-for 是例外情况，稍后我们再讨论)。指令的职责是，
+                  当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM。回顾我们在介绍中看到的例子：
+                  <p v-if="seen">现在你看到我了</p>
+                  这里，v-if 指令将根据表达式 seen 的值的真假来插入/移除 <p> 元素。
+              </pre>
+              <span>2.参数</span>
+              <pre>
+                  一些指令能够接收一个“参数”，在指令名称之后以冒号表示。例如，v-bind 指令可以用于响应式地更新 HTML 特性：
+                  <a v-bind:href="url">...</a>
+                  在这里 href 是参数，告知 v-bind 指令将该元素的 href 特性与表达式 url 的值绑定。
+                  另一个例子是 v-on 指令，它用于监听 DOM 事件：
+                  <a v-on:click="doSomething">...</a>
+                  在这里参数是监听的事件名。我们也会更详细地讨论事件处理。
+             </pre>
+              <span>3.动态参数</span>
+              <pre>
+                  从 2.6.0 开始，可以用方括号括起来的 JavaScript 表达式作为一个指令的参数：
+
+                  <a v-bind:[attributeName]="url"> ... </a>
+                  这里的 attributeName 会被作为一个 JavaScript 表达式进行动态求值，求得的值将会作为最终的参数来使用。例如，如果你的 Vue 实例有一个 data 属性 attributeName，其值为 "href"，那么这个绑定将等价于 v-bind:href。
+                  
+                  同样地，你可以使用动态参数为一个动态的事件名绑定处理函数：
+                  
+                  <a v-on:[eventName]="doSomething"> ... </a>
+                  同样地，当 eventName 的值为 "focus" 时，v-on:[eventName] 将等价于 v-on:focus。
+                  
+                  对动态参数的值的约束
+                  动态参数预期会求出一个字符串，异常情况下值为 null。这个特殊的 null 值可以被显性地用于移除绑定。任何其它非字符串类型的值都将会触发一个警告。
+                  
+                  对动态参数表达式的约束
+                  动态参数表达式有一些语法约束，因为某些字符，例如空格和引号，放在 HTML 特性名里是无效的。同样，在 DOM 中使用模板时你需要回避大写键名。
+              </pre>
+              <span>4.修饰符</span>
+              <pre>
+                  修饰符 (modifier) 是以半角句号 . 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。
+                  例如，.prevent 修饰符告诉 v-on 指令对于触发的事件调用 event.preventDefault()：
+                  <form v-on:submit.prevent="onSubmit">...</form>
+                  在接下来对 v-on 和 v-for 等功能的探索中，你会看到修饰符的其它例子
+
+              </pre>
+            </div>
+        <script>
+       Vue.component('todo-item', {
+          // todo-item 组件现在接受一个
+          // "prop"，类似于一个自定义特性。
+          // 这个 prop 名为 todo。
+          props: ['todo'],
+          template: '<li>{{todo.title}}</li><li>{{todo.text}}</li>'
+        })
+        var app7 = new Vue({
+            el: '#app-7',
+            data: {
+              groceryList: [
+                { id: 0,title:'数据与方法',text: '当一个 Vue 实例被创建时，它将 data 对象中的所有的属性加入到 Vue 的响应式系统中。当这些属性的值发生改变时，视图将会产生“响应”，即匹配更新为新的值。' },
+                { id: 1, title:'值得注意的是只有当实例被创建时 data 中存在的属性才是响应式的',text: '' },
+                { id: 2, title:'如果你知道你会在晚些时候需要一个属性，但是一开始它为空或不存在，那么你仅需要设置一些初始值。',text: '随便其它什么人吃的东西' },
+                { id: 3, title:'这里唯一的例外是使用 Object.freeze()，这会阻止修改现有的属性，也意味着响应系统无法再追踪变化。',text: '随便其它什么人吃的东西' }
+              ]
+            }
+          })
+        </script> 
+    </body>
+</html>

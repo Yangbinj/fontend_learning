@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>js对象demo</title>
+</head>
+<script>
+    var myObject = {
+        firstName: "name",
+        lastName: "china",
+        age: 50,
+        getFriend: function () {
+            return this.lastName + " and " + "yangbin are good friends"
+        }
+    }
+    function showObjectName() {
+        // 如果您把值赋给尚未声明的变量，该变量将被自动作为 window 的一个属性。
+        demo = document.getElementById("demo")
+        demo.innerHTML = myObject.firstName + " " + myObject.lastName + " " + myObject["age"] + " " + myObject.getFriend() + " " + myObject.getFriend;
+    }
+</script>
+
+<body>
+    <h2>My myObject JavaScript</h2>
+    <button type="button" onclick="showObjectName()">
+        Click me to show myObject.</button>
+
+    <p id="demo">Click me to show myObject.</p>
+
+</body>
+
+</html>

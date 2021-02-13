@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en,cn">
+	<head>
+		<meta charset="utf-8">
+		<title>css引入css基础选择器选择器权重</title>
+		<link rel="stylesheet" type="text/css" href="css/lesson4.css" />
+		<style>
+			.pageLevel{
+				width:100px;
+				height: 100px;
+				background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		cascading style sheet :层叠样式表
+		<!-- 1.引入css -->
+		行间样式
+		<div style="width: 100px;height: 100px;background: red;"></div>
+		
+		<!-- 2.页面级css -->
+		<div class="pageLevel">
+			
+		</div>
+		
+		<!-- 3.外部css文件 -->
+		<div class="exter second">外部css文件</div>
+		
+		同步：一步一步来
+		异步：两件事一起干，css和html是同时加载，成为异步加载
+		
+		<!-- 选择器 -->
+		<div id="only" class="demo">123</div>
+		<div class="demo">123</div>
+	
+		标签选择器
+		<span></span>
+		
+		<div id="only1">
+			23323
+		</div>		
+     <!-- !important>行间样式>id> class | 属性选择器 > 标签选择器 >通配符 -->
+	 !important: 权重 Infinity
+	 行间样式：1000
+	 id:100
+	 class|属性|伪类：10；
+	 标签|伪元数：1
+	 通配符：0
+	 
+	 255进制
+	</body>
+</html>

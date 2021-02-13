@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>css3-positon值和效果</title>
+        <style>
+            p{
+                background-color: cadetblue;
+            }
+            .fix > div{
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+            }
+            .relative > div{
+                position: relative;
+                top: 15px;
+                left: 40px;
+            }
+            .relative > span{
+                display: block;
+            }
+            .absolute{
+                position: relative;
+                width: 500px;
+                height: 500px ;
+                background-color: black;
+                padding: 10px;
+                border: 5px solid blue;
+            }
+            .absolute > div{
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                background-color: white;
+                right: 10px;
+                bottom: 10px;
+            }
+            .absolute2{
+                position: relative;
+            }
+            .absolute2 > div{
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>CSS 定位 (Positioning) 属性允许你对元素进行定位。 </p>
+        <p> fixed 是用来相对于body进行绝对定位的,元素框从文档流完全删除，并相对于其包含块定位。</p>
+        <div class="fix">
+            <div>this is fix position </div>
+            hello 
+        </div>
+
+        <p>relative 是用来进行相对定位的，相对定位实际上被看作普通流定位模型的一部分，因为元素的位置相对于它在普通流中的位置。</p>
+        <div class="relative">
+            <div>this is relative position </div>
+            <span>hello1</span>
+            hello2
+        </div>
+
+        <p>position:absolute；绝对定位使用通常是父级定义position:relative定位，子级定义position:absolute绝对定位属性，并且子级使用left或right和top或bottom进行绝对定位。</p>
+        <div class="absolute">
+            <div></div>
+            hello
+        </div>
+        <p>absolute 定位的元素脱离了文档流</p>
+        <div class="absolute2">
+            <div>你好啊</div>
+            <span>hello ,absolute2,这个紧贴在p标签，证明absolute脱离文档流</span>
+        </div>
+    </body>
+</html>

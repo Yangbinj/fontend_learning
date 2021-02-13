@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- 规定 HTML 文档的字符编码 -->
+        <meta charset="utf-8"/>
+
+        <title>css3-float学习</title>
+        <style>
+            p{
+                background-color: cadetblue;
+            }
+            .float{
+                width: 600px;
+                height: 600px;
+                border:5px solid black;
+            }
+            .float > div{
+                float: left;
+                width: 200px;
+                height: 200px;
+                background-color: blueviolet;
+                margin: 2px;
+            }
+            .clear{
+                width: 600px;
+                background-color: antiquewhite;
+                border:5px solid black;
+            }
+            .clear > div{
+                float: left;
+                width: 200px;
+                height: 200px;
+                background-color: blueviolet;
+                margin: 2px;
+            }
+            .clear2{
+                width: 600px;
+                background-color: antiquewhite;
+                border:5px solid black;
+            }
+            .first, .second, .third{
+                float: left;
+                width: 200px;
+                height: 200px;
+                background-color: blueviolet;
+                margin: 2px;
+            }
+            .concreClear{
+                clear: both;
+            }
+        </style>
+
+    </head>
+    <script></script>
+    <body>
+        <p>float 生效</p>
+        <div class="float">
+            <span>heleoeooeeo</span>
+            <span>heleoeooeeo</span>
+            <span>heleoeooeeo</span>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>        
+            <div></div>
+        </div>
+        
+        <p>clear2 生效:Html代码中“.clear2结束标签前加入代码：clear:both    </p>
+        <div class="clear2">
+            <span>heleoeooeeo</span>
+            <span>heleoeooeeo</span>
+            <span>heleoeooeeo</span>
+            <div class="first"></div>
+            <div class="second"></div>
+            <div class="third"></div>
+            <div class="concreClear"></div>
+        </div>
+
+        <p>无clear 生效: clear元素内部产生了浮动，导致clear元素没有撑开    </p>
+        <div class="clear">
+            <span>heleoeooeeo</span>
+            <span>heleoeooeeo</span>
+            <span>heleoeooeeo</span>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+    </body>
+</html>

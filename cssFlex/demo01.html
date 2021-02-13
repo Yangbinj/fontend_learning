@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>前端技术介绍、样式三种形式</title>
+		<style type="text/css">
+			/* CSS基本表现形式只有三种：标签样式、Class类样式、ID样式  
+			
+			     标签样式: 必须与HTML标签同名。仅仅影响同名标签
+				 Class样式：可以在任何标签中使用: class="样式名"
+				 ID: #来表示,优先级  ID > Class > Label
+			*/
+			div{
+				color: red;
+			}
+			.mycls{
+				color: green;
+			}
+			#mycls{
+				color: blue;
+			}
+			
+		</style>
+		<script type="text/javascript">
+			// 
+		</script>
+	</head>
+	<body>
+		<!-- 
+		 1: HTML (结构层)    2: CSS (表现层)    3: JavaScript (行为层) 
+		 2: HTML类似人的骨骼, CSS就像人的皮肤，JS给人赋予生命。
+		 3: 前端框架：BootStrap / Jquery  (通过网页的dom对象类进行选择) / Vue、Angularjs （双向数据绑定）
+		 -->
+		<div class="mycls" id="mycls">我是DIV标签</div>
+		<p class="mycls" id="mycls">我是P段落</p>
+	</body>
+</html>

@@ -1,0 +1,105 @@
+1.created:在模板渲染成html前调用，即通常初始化某些属性值，然后再渲染成视图。
+mounted:在模板渲染成html后调用，通常是初始化页面完成后，再对html的dom节点进行一些需要的操作。
+其实两者比较好理解，通常created使用的次数多，而mounted通常是在一些插件的使用或者组件的使用中进行操作，比如插件chart.js的使用:?var ctx = document.getElementById(ID);通常会有这一步，而如果你写入组件中，你会发现在created中无法对chart进行一些初始化配置，一定要等这个html渲染完后才可以进行，那么mounted就是不二之选。下面看一个例子（用组件）
+
+Vue.component("demo1",{
+        data:function(){
+            return {
+                name:"",
+                age:"",
+                city:""
+            }
+        },
+        template:"<ul><li id='name'>{{name}}</li><li>{{age}}</li><li>{{city}}</li></ul>",
+        created:function(){
+            this.name="唐浩益"
+            this.age = "12"
+            this.city ="杭州"
+            var x = document.getElementById("name")//第一个命令台错误
+            console.log(x.innerHTML);
+        },
+        mounted:function(){
+            var x = document.getElementById("name")//第二个命令台输出的结果
+            console.log(x.innerHTML);
+        }
+    });
+    var vm = new Vue({
+        el:"#example1"
+})
+
+      <div id="loading" v-show="loadingShow"><vm-loading id="innerLoading" type="spinner"/></div>  
+
+ computed: {
+    loadingShow(){
+      return this.$root.loadingShow;
+    }
+  },
+  #loading {
+  position: fixed;
+  z-index: 10000;
+  height: 100%;
+  width: 100%;
+  #innerLoading {
+    position: absolute;
+    top: 50%;
+    // margin-top: -40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // margin-left: -40px;
+  }
+}
+
+2.
+computed用来监控自己定义的变量，该变量不在data里面声明，直接在computed里面定义，然后就可以在页面上进行双向数据绑定展示出结果或者用作其他处理；
+computed比较适合对多个变量或者对象进行处理后返回一个结果值，也就是数多个变量中的某一个值发生了变化则我们监控的这个值也就会发生变化，举例：购物车里面的商品列表和总金额之间的关系，只要商品列表里面的商品数量发生变化，或减少或增多或删除商品，总金额都应该发生变化。这里的这个总金额使用computed属性来进行计算是最好的选择
+3.watch主要用于监控vue实例的变化，它监控的变量当然必须在data里面声明才可以，它可以监控一个变量，也可以是一个对象，它比较适合的场景是一个数据影响多个数据
+
+4.在Vue中计算属性是基于它们的依赖进行缓存的，而方法是不会基于它们的依赖进行缓存的。从而使用计算属性要比方法性能更好。
+
+5.虽然计算属性在大多数情况下更合适，但有时候也需要一个自定义的watcher。这是为什么Vue通过watch选项提供一个更通用的方法，来响应数据的变化。当你想要在数据变化响应时，执行异步操作或开销较大的操作，这是很有用的。
+
+Vue确实提供了一种更通用的方式来观察和响应Vue实例上的数据变动：watch属性。当你有一些数据需要随着其它数据变动而变动时，你很容易滥用watch。然而，通常更好的想法是使用计算属性而不是命令式的watch回调。
+
+6.computed区别于method的两个核心
+https://segmentfault.com/a/1190000014478664?utm_source=tag-newest
+computed是属性调用，而methods是函数调用
+computed带有缓存功能，而methods不是
+computed定义的方法我们是以属性访问的形式调用的，{{computedTest}}
+但是methods定义的方法，我们必须要加上()来调用，如{{methodTest()}}
+computed依赖于data中的数据，只有在它的相关依赖数据发生改变时才会重新求值
+
+
+7.Vue的computed和watch的细节全面分析
+https://segmentfault.com/a/1190000012948175
+get和set用法
+data: {
+    firstName: 'Foo',
+    lastName: 'Bar'
+  },
+  computed: {
+  fullName：{
+   get(){//回调函数 当需要读取当前属性值是执行，根据相关数据计算并返回当前属性的值
+      return this.firstName + ' ' + this.lastName
+    },
+   set(val){//监视当前属性值的变化，当属性值发生变化时执行，更新相关的属性数据
+       //val就是fullName的最新属性值
+       console.log(val)
+        const names = val.split(' ');
+        console.log(names)
+        this.firstName = names[0];
+        this.lastName = names[1];
+   }
+   }
+  }
+  watch是一个观察的动作
+
+ watch: {
+     firstName: function (val) {
+     this.fullName = val + ' ' + this.lastName
+  },
+  lastName: function (val) {
+     this.fullName = this.firstName + ' ' + val
+   }
+   }
+   上面是监听firstName和lastName的变化，但是仅限简单数据类型
+

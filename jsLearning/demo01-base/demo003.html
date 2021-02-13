@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<script>
+    // window.alert(5 + 6);
+    function changeColor() {
+        demo = document.getElementById("demo")
+        demo.style.color = "#ff0000"
+    }
+    function isNanNumber() {
+        var x = document.getElementById("demoNumber").value;
+        if (x == "" || isNaN(x) || x.replace(/(^\s*)|(\s*$)/g, "") == "") {
+            alert("不是数字");
+        } else {
+            alert("是数字")
+        }
+    }
+    function coverFunction() {
+        document.write(Date());
+    }
+</script>
+
+<body>
+    <h2>My First JavaScript</h2>
+    <button type="button" onclick="changeColor()">
+        Click me to change the color.</button>
+
+    <p>请输入数字。如果输入值不是数字，浏览器会弹出提示框。</p>
+    <input id="demoNumber" type="text">
+    <button type="button" onclick="isNanNumber()">点击这里</button>
+    <button onclick="coverFunction()">点我cover页面</button>
+
+    <p id="demo">It will be changed in color</p>
+
+</body>
+
+</html>

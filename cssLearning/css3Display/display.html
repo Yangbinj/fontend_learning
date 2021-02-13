@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>css-display學習</title>
+        <style>
+            p{
+                background-color: cadetblue;
+            }
+            .inline2block > span{
+                display: block;
+            }
+            .inline > div{
+                display: inline;
+                background-color: blueviolet;
+                width: 300px;
+                height: 400px;
+            }
+            .none > div{
+                display: none;
+            }
+
+        </style>
+    </head>
+    <body>
+        <p>div 默认是block的</p>
+        <div class="block">
+            <div>hello,this is block</div>
+            hello
+        </div>
+        <p>span 默认是inline的，可以改为块标签</p>
+        <div class="inline2block">
+            <span>this is span </span>
+            hello
+        </div>
+        
+        <p>div 默认是block的,但是可以通过display:inline改为行标签</p>
+        <div class="inline">
+            <div>hello,this is inline for div by set display:inline</div>
+            hello
+        </div>
+        <p>div 默认是block的,通过display:none可以让他不显示，但是html中还是有这段代码的，
+            被隐藏的对象也不会占用自身固有宽度高度空间
+        </p>
+        <div class="none">
+            <div>display is none </div>
+            hello
+        </div>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>position定位-fixed-固定定位</title>
+        <style>
+            div{
+                width: 100%;
+                height: 1800px;
+                background-color:darkorange;
+            }
+            #box2{
+                width: 200px;
+                height: 200px;
+                background-color: green;
+                position: fixed;
+                right: 200px;
+                bottom: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>position属性指定一个元素的定位方法的类型</p>
+        <p>absolute：绝对定位</p>
+        <p>relative：相对定位</p>
+        <p>fixed：固定定位，相对于浏览器定位</p>
+
+        <div>
+            <div id="box2">固定定位，原来的物理位置不存在了，脱离了文档流</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- 规定 HTML 文档的字符编码 -->
+    <meta charset="utf-8" />
+
+    <title>css的几种选择器及其优先级</title>
+
+    <link rel="stylesheet" href="02css.css" />
+</head>
+
+<body>
+    <div>
+        基本选择器组
+        <div id="id_selector">
+            id选择器生效：
+            this is id_selector, 原则上一个文件只能有一个相同名字的id选择器，但是多个一样的名字也可以生效。
+        </div>
+        <div class="class_selector">
+            class选择器生效：
+            this is class_selector
+        </div>
+        <div class="class_selector">
+            class选择器生效：
+            this is class_selector
+        </div>
+        <div>标签选择器生效</div>
+        <span>this is span1</span>
+        <span>this is span1</span>
+        <div>通配符选择器</div>
+    </div>
+
+    <div>
+        高级选择器组
+        <p>hello,this is p element, it is block element</p>
+        <h1>
+            分组选择器生效
+            hello,this is h1;
+            <p>hello ,this is p, I am inner of h1</p>
+        </h1>
+        <h2>
+            后代选择器：所声明的样式仅对h2下面的p生效<br>
+            hello,this is h2;
+            <p>hello ,this is p, I am inner of h2</p>
+        </h2>
+
+        属性选择器生效<br>
+        <a>hello,this is a element, without href</a><br>
+        <a href="www.baidu.com">hello1,this is a element with href</a><br>
+        <a href="www.baidu.com">hello2,this is a element with href</a><br>
+
+        子元素选择器生效，他和后代选择器的主要区别是：后代选择器是应用到所有的后代，而子元素选择器只影响直接后代
+        <h1>This is <strong>very</strong> <strong>very</strong> important.</h1>
+        <h1>This is <em>really <strong>very</strong></em> important.</h1>
+
+        相邻选择器，h3+p:只对h3相邻的第一个p标签生效。
+        <h3>this is h3 <p>this inner p</p></h3>
+        <p>this is p element connection h2</p>
+        <p>this is p element connection p</p>
+
+        CSS 伪类用于向某些选择器添加特殊的效果。
+        <p class="pseudo_classes">
+            <a href="www.baidu.com">this is 伪类1</a><br>
+            <a href="www.baidu.com">this is 伪类2</a><br>
+            <a href="www.baidu.com">this is 伪类3</a><br>
+        </p>
+        <p>
+            伪类集合：
+            :active	向被激活的元素添加样式。	
+            :focus	向拥有键盘输入焦点的元素添加样式。	
+            :hover	当鼠标悬浮在元素上方时，向元素添加样式。	
+            :link	向未被访问的链接添加样式。	
+            :visited	向已被访问的链接添加样式。
+            :first-child	向元素的第一个子元素添加样式。
+            :lang	向带有指定 lang 属性的元素添加样式。
+        </p>
+ 
+
+       使用 :first-child 伪类来选择元素的第一个子元素
+       必须声明 <!DOCTYPE>，这样 :first-child 才能在 IE 中生效。
+        <li>
+            <ul>ul1</ul>
+            <ul>ul2</ul>
+            <ul>ul3</ul>
+            <ul>ul4</ul>
+        </li>
+
+        :lang 伪类使你有能力为不同的语言定义特殊的规则。在下面的例子中，:lang 类为属性值为 no 的 q 元素定义引号的类型：
+        <p>文字<q lang="no">段落中的引用的文字</q>文字</p>
+
+        CSS 伪元素 (Pseudo-elements)
+        CSS 伪元素用于向某些选择器设置特殊效果。
+        <p>
+            伪元素集合：
+            :first-letter	向文本的第一个字母添加特殊样式。
+            :first-line	向文本的首行添加特殊样式。
+            :before	在元素之前添加内容。	
+            :after	在元素之后添加内容。
+        </p>
+        <h4>nihaoma,f</h4>
+    </div>
+
+</body>
+
+</html>

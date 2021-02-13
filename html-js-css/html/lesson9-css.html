@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en,cn">
+	<head>
+		<meta charset="utf-8">
+		<title>css企业开发经验，习惯，盒子模型，层模型（前20分钟没有笔记）</title>
+		<link rel="stylesheet" type="text/css" href="css/lesson8.css" />
+		<style type="text/css">
+			.ulTitle {
+				list-style: none;
+			}
+
+			.ulTitle li {
+				display: inline;
+			}
+
+			.ulContent {
+				list-style: none;
+			}
+
+			.ulContent li {
+				display: inline;
+			}
+
+			ul {
+				list-style: none;
+				padding: 0px;
+				margin: 0px;
+				width: 590px;
+				height: 30px;
+				border-bottom: 1px solid #DDDDDDFF;
+				border-top: 0px;
+				font-size: 12px;
+			
+			}
+			/* ul.td{
+				border-bottom: 1px solid #99CC00;
+				
+			} */
+
+			/* ul li {
+				/* display: block;
+				width: 33%;
+				float: left;			
+				text-indent: 2em 
+			} */
+			
+			ul li:first-child{
+					display: block;
+					width: 50%;
+					float: left;		
+						line-height: 30px;
+					text-indent: 2em;
+					border-right:1px solid #DDDDDDFF;
+				}
+			ul li:nth-child(2){
+					display: block;
+					width: 20%;
+					float: left;			
+					text-indent: 2em;
+					line-height: 30px;
+					border-right:1px solid #DDDDDDFF;
+				
+				}
+			ul li:nth-child(3){
+					display: block;
+					width: 10%;
+					/* line-height: 13px; */
+					float: left;			
+					/* text-indent: 2em; */
+					border-right:1px solid #DDDDDDFF;
+				}
+			ul li:nth-child(4){
+					/* line-height: 13px; */
+					/* text-indent: 2em; */
+					/* text-align: center; */
+					width: 10%;
+					float: left;
+					
+				}
+			
+			/* ul:second-child{
+				display: block;
+				width: 33%;
+				float: left;			
+				text-indent: 2em
+			} */
+			/* .th {
+				background: #F1FADE;
+				font-weight: bold;
+				line-height: 30px;
+				&:nth-child(odd){
+				       border-left: 1px #99CC00 solid;
+				}
+			} */
+		</style>
+	</head>
+	<body>
+		<!-- <table>
+	<tr  border="1">
+	  <td>Firstddddddddddddddddddddddddd</td>
+	  <td>Row</td>
+	</tr>   
+	<tr>
+	  <td>Second</td>
+	  <td>Row</td>
+	</tr>
+</table> -->
+		<!-- <ul class="ulTitle">
+	<li>受理时间</li>
+	<li>工单类型</li>
+	<li>业务受理前运营商</li>
+	<li>业务受理后运营商</li>
+</ul>
+<ul class="ulContent">
+	<li>2019-10-12 15:15:22</li>
+	<li>携入</li>
+	<li>电信</li>
+	<li>移动</li>
+</ul> -->
+		<ul class="th">
+			<li>受理时间</li>
+			<li>工单类型</li>
+			<li>业务受理前运营商</li>
+			<li>业务受理后运营商</li>
+		</ul>
+		<ul class="td">
+			<li>2019-10-12 15:15:22</li>
+			<li>携入</li>
+			<li>电信</li>
+			<li>移动</li>
+		</ul>
+		<ul class="td">
+			<li>2019-10-12 15:15:22</li>
+			<li>携入</li>
+			<li>电信</li>
+			<li>移动</li>
+		</ul>
+		<ul class="td">
+			<li>2019-10-12 15:15:22</li>
+			<li>携入</li>
+			<li>电信</li>
+			<li>移动</li>
+		</ul>
+
+
+	</body>
+</html>

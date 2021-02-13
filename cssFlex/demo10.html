@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Flex网页布局(下)</title>
+		<!-- 所有的html标签，本质都是盒子,不同是因为默认的CSS样式不同  -->
+		<style type="text/css">
+			  .container{
+					  display:flex;
+						flex-direction: column;
+						width: 1000px;
+						margin-left: auto;
+						margin-right: auto;
+				}
+				header,footer{
+					background-color: #707070;
+					padding: 10px;
+					flex: 1;
+					color: #fff;
+					text-align: center;
+				}
+				.grid{
+					 display: flex;
+					 min-height: 400px;
+				}
+				.left,.right,.center{
+					   flex:1;
+						 text-align: center;
+						 color: #fff;
+						 line-height: 400px;
+				}
+		</style>
+	</head>
+	<body>
+		   <div class="container">
+					<header>#header</header>
+					<div class="grid">
+						  <div class="left" style="background-color: #459;">left</div>
+						  <div class="center" style="background-color: #ccc; flex: 3;">center</div>
+						  <div class="right" style="background-color: #954;">right</div>
+					</div>
+				  <footer>#footer</footer>
+			 </div>
+	</body>
+</html>

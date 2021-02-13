@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>css3 盒模型</title>
+        <style>
+            .default-box > div{
+                width: 200px;
+                height: 200px;
+                /* background-color: 生效范围是 element+padding; */
+                background-color: rebeccapurple; 
+                padding: 80px;
+                border: 30px solid black;
+                margin: 10px;
+            }
+            .content-box > div{
+                box-sizing: content-box;
+                width: 200px;
+                height: 200px;
+                /* background-color: 生效范围是 element+padding; */
+                background-color: rebeccapurple; 
+                padding: 80px;
+                border: 30px solid black;
+                margin: 10px;
+            }
+            .border-box > div{
+                box-sizing:border-box;
+                width: 200px;
+                height: 200px;
+                /* background-color: 生效范围是 element+padding; */
+                background-color: rebeccapurple; 
+                padding: 80px;
+                border: 30px solid black;
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+
+        原生的盒模型：默认是content_box, width的宽度就是元素的宽度。
+        <div class="default-box">
+            <div></div>
+        </div>
+
+        盒模型:box-sizing: content-box, width的宽度就是元素的宽度。
+        <div class="content-box">
+            <div></div>
+        </div>
+
+        盒模型：box-sizing:border-box，width的宽度是content + 2 * padding + 2 * border
+        <div class="border-box">
+            <div>
+
+            </div>
+        </div>
+    </body>
+</html>

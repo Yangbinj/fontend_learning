@@ -1,0 +1,8 @@
+1.跨域问题的原因
+跨域是指a页面想获取b页面资源，如果a、b页面的协议、域名、端口、子域名不同，或是a页面为ip地址，b页面为域名地址，所进行的访问行动都是跨域的，而浏览器为了安全问题一般都限制了跨域访问，也就是不允许跨域请求资源。 
+https://blog.csdn.net/qq_31617637/article/details/72955239
+2.什么是JSONP
+Jsonp(JSON with Padding) 是 json 的一种"使用模式"，可以让网页从别的域名（网站）那获取资料，即跨域读取数据。
+什么是jsonp：https://blog.csdn.net/hansexploration/article/details/80314948
+跨域问题解决办法：
+https://www.cnblogs.com/itmacy/p/6958181.html
